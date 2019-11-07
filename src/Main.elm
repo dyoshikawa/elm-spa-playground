@@ -114,8 +114,7 @@ view : Model -> Browser.Document Msg
 view model =
     { title = "URL Interceptor"
     , body =
-        [ text "The current URL is: "
-        , ul []
+        [ ul []
             [ viewLink "/top"
             , viewLink "/about"
             ]

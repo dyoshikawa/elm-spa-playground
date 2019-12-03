@@ -5,7 +5,7 @@ import Browser.Navigation as Nav
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Url
-import Url.Parser exposing ((</>), Parser, int, map, oneOf, parse, s, string)
+import Url.Parser exposing ((</>), Parser, oneOf, parse)
 
 
 
@@ -73,6 +73,10 @@ update msg model =
             ( { model | route = route }
             , Cmd.none
             )
+
+
+
+-- ROUTE
 
 
 routeParser : Parser (Route -> a) a

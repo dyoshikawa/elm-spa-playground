@@ -78,7 +78,7 @@ update msg model =
 routeParser : Parser (Route -> a) a
 routeParser =
     oneOf
-        [ Url.Parser.map Top (Url.Parser.s "")
+        [ Url.Parser.map Top Url.Parser.top
         , Url.Parser.map About (Url.Parser.s "about")
         ]
 
@@ -115,8 +115,9 @@ view model =
     { title = "URL Interceptor"
     , body =
         [ ul []
-            [ viewLink "/top"
+            [ viewLink "/"
             , viewLink "/about"
+            , viewLink "/notfound"
             ]
         , case model.route of
             Top ->
